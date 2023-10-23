@@ -1,13 +1,10 @@
 package com.lbg;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        Calculator cc = new Calculator();
+        System.out.println( cc.add(3,7) );
     }
 }
