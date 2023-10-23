@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CalculatorTest {
 
     @Test
-    void input_two_positive_result_positive_number() {
+    void add_two_positive_result_positive_number() {
         // arrange
         Calculator cut = new Calculator();
         double val1 = 4;
@@ -22,12 +22,25 @@ class CalculatorTest {
     }
 
     @Test
-    void subtract() {
+    void subtract_two_positive_result_positive_number() {
+        Calculator cut = new Calculator();
+        double val1 = 10;
+        double val2 = 7;
+        double expectedResult = 3;
+
+        double actualResult = cut.subtract(val1,val2);
+        assertEquals(expectedResult,actualResult);
 
     }
 
     @Test
-    void remainingPercentage() {
+    void remaining_percent_two_positive_result_positive() {
+        Calculator cut = new Calculator();
+        double val1 = 100;
+        double val2 = 40;
+        double expectedResult = 60;
 
+        double actualResult = cut.remainingPercentage(val1,val2);
+        assertEquals(expectedResult,actualResult);
     }
 }
