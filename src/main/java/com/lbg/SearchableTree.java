@@ -2,31 +2,29 @@ package com.lbg;
 import java.util.ArrayList;
 public class SearchableTree
 {
-    private ArrayList<String> items = new ArrayList<>();
-    public String populateContainer()
-    {
-        String str= new String("selvyn");
-        items.add(str);
-        items.add("trains");
-        items.add("lecture");
-        items.add("graduate");
-        items.add("company");
-        items.add("taxes");
-        return str;
+    private DataStore store;
+    public SearchableTree(DataStore ds){
+        store = ds;
     }
+
+    public void populateContainer()
+    {
+        store.generate();
+    }
+
     public int find( String key )
     {
-        return items.indexOf(key);
+        return store.getIndexOf(key);
     }
     public boolean  findIfLastItem( String key )
     {
         boolean result = false;
-        int length = items.size();
-        return length-1 == items.indexOf(key);
+        int length = store.getSize();
+        return length-1 == store.getIndexOf(key);
     }
     public boolean  findIfFirstItem( String key )
     {
         boolean result = false;
-        return 0 == items.indexOf(key);
+        return 0 == store.getIndexOf(key);
     }
 }

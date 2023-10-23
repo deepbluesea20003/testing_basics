@@ -1,23 +1,32 @@
 package com.lbg;
 
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class SearchableTreeTest {
 
-    @Test
-    void populateContainer() {
-        SearchableTree cut = new SearchableTree();
-        String expected_value = "selvyn";
-        String actual_value = cut.populateContainer();
-        assertEquals(expected_value,actual_value);
+//    @Test
+//    void populateContainer() {
+//        DataStore data = new DataStore();
+//        SearchableTree cut = new SearchableTree(data);
+//        String expected_value = "selvyn";
+//        String actual_value = cut.populateContainer();
+//        assertEquals(expected_value,actual_value);
+//    }
 
+    @BeforeEach
+    void setup(){
+        DataStore data = new DataStore();
+        SearchableTree cut = new SearchableTree(data);
     }
 
     @Test
     void findWhenItemThere() {
-        SearchableTree cut = new SearchableTree();
+        DataStore data = new DataStore();
+        SearchableTree cut = new SearchableTree(data);
         cut.populateContainer();
         int expected_value = 0;
         int actual_value = cut.find("selvyn");
@@ -26,7 +35,8 @@ class SearchableTreeTest {
 
     @Test
     void findItemWhenNotThere(){
-        SearchableTree cut = new SearchableTree();
+        DataStore data = new DataStore();
+        SearchableTree cut = new SearchableTree(data);
         cut.populateContainer();
         int expected_value = -1;
         int actual_value = cut.find("Adam");
@@ -35,7 +45,8 @@ class SearchableTreeTest {
 
     @Test
     void findIfLastItemWhenItemThereAndInList() {
-        SearchableTree cut = new SearchableTree();
+        DataStore data = new DataStore();
+        SearchableTree cut = new SearchableTree(data);
         cut.populateContainer();
         boolean expected_value = true;
         boolean actual_value = cut.findIfLastItem("taxes");
@@ -44,7 +55,8 @@ class SearchableTreeTest {
 
     @Test
     void findIfLastItemWhenItemNotInList() {
-        SearchableTree cut = new SearchableTree();
+        DataStore data = new DataStore();
+        SearchableTree cut = new SearchableTree(data);
         cut.populateContainer();
         boolean expected_value = false;
         boolean actual_value = cut.findIfLastItem("Adam");
@@ -53,7 +65,8 @@ class SearchableTreeTest {
 
     @Test
     void findIfLastItemWhenItemNotThereAndInList() {
-        SearchableTree cut = new SearchableTree();
+        DataStore data = new DataStore();
+        SearchableTree cut = new SearchableTree(data);
         cut.populateContainer();
         boolean expected_value = false;
         boolean actual_value = cut.findIfLastItem("lecture");
@@ -62,7 +75,8 @@ class SearchableTreeTest {
 
     @Test
     void findIfFirstItemWhenItemThere() {
-        SearchableTree cut = new SearchableTree();
+        DataStore data = new DataStore();
+        SearchableTree cut = new SearchableTree(data);
         cut.populateContainer();
         boolean expected_value = true;
         boolean actual_value = cut.findIfFirstItem("selvyn");
@@ -71,7 +85,8 @@ class SearchableTreeTest {
 
     @Test
     void findIfFirstItemWhenItemNotThereAndInList() {
-        SearchableTree cut = new SearchableTree();
+        DataStore data = new DataStore();
+        SearchableTree cut = new SearchableTree(data);
         cut.populateContainer();
         boolean expected_value = false;
         boolean actual_value = cut.findIfFirstItem("taxes");
@@ -80,7 +95,8 @@ class SearchableTreeTest {
 
     @Test
     void findIfFirstItemWhenItemNotInList() {
-        SearchableTree cut = new SearchableTree();
+        DataStore data = new DataStore();
+        SearchableTree cut = new SearchableTree(data);
         cut.populateContainer();
         boolean expected_value = false;
         boolean actual_value = cut.findIfFirstItem("Adam");
