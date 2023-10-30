@@ -14,7 +14,12 @@ public class Grid {
         return items.get(x+y*size); // will be null if nothing there
     }
 
-    private void add(Item i, int x, int y){ // adds item to a position
+    void add(Item i, int x, int y){ // adds item to a position
         items.add(x+y*size,i);
+    }
+
+    public int getSize() {
+
+        return size;
     }
 }

@@ -4,6 +4,8 @@ public class App
 {
     public static void main( String[] args )
     {
-        /*Code here*/
+        Menu m = new Menu();
+        m.run();
+        System.out.println("Thank you for playing the maze game");
     }
 }

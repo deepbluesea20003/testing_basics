@@ -12,12 +12,12 @@ public class Menu {
 
 
         System.out.println("Welcome to the maze game. Enter QUIT to finish the game at anytime");
-        String move = IO.getUserInput("Which direction would you like to go?");
-
+        System.out.println("The controls are N,E,S,W");
+        String move = IO.getUserInput("Which direction would you like to go? ");
 
 
         while(move.compareToIgnoreCase("quit") != 0){
-
+            move = IO.getUserInput("test");
         }
     }
 }
